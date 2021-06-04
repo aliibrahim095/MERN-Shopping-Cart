@@ -13,18 +13,28 @@
     grid-template-columns:repeat(4,1fr);
 }
 
-@media(max-width:1232px){
+@media(max-width:1286px){
     .homescreen__products{
         grid-template-columns: repeat(3,1fr);
+    }
+    .homescreen__products > .product{
+        margin:1rem auto;
     }
 }
 @media(max-width:950px){
     .homescreen__products{
         grid-template-columns: repeat(2,1fr);
     }
+    .homescreen__products > .product{
+        margin:1rem auto;
+    }
 }
 @media(max-width:630px){
     .homescreen__products{
         grid-template-columns: 1fr;
     }
+    .homescreen__products > .product{
+        margin:1rem auto;
+    }
+
 }
