@@ -1,6 +1,6 @@
 import "./CartItem.css";
 import {Link} from 'react-router-dom'
-export const CartItem = ({item,qtyChangHandler}) => {
+export const CartItem = ({item,qtyChangHandler,removeHandler}) => {
   return (
     <div className="cartitem">
       <div className="cartitem__image">
@@ -18,7 +18,7 @@ export const CartItem = ({item,qtyChangHandler}) => {
             <option key={x+1} value={x+1}>{x+1}</option>
           ))}
       </select>
-      <button className="cartitem__deleteBtn">
+      <button className="cartitem__deleteBtn" onClick={()=>removeHandler(item.product)}>
           <i className="fas fa-trash"></i>
       </button>
     </div>
