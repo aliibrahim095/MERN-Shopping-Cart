@@ -32,5 +32,4 @@ const [sideToggle, setSideToggle] = useState(false)
     </Router>
   );
 }
-
 export default App;
