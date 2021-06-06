@@ -26,9 +26,6 @@ const [sideToggle, setSideToggle] = useState(false)
           <Route exact path="/cart" component={CartScreen}></Route>
         </Switch>
       </main>
-      {/* HomeScreen */}
-      {/* ProductScreen */}
-      {/* CartScreen */}
     </Router>
   );
 }

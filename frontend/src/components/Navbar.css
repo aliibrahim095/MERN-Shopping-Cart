@@ -8,10 +8,11 @@
     padding:1.5rem 1rem;
     z-index: 50;
 }
-.navbar__logo h2{
+.navbar__logo h2 .mernshopcart{
     color:#f4f4f4;
     font-size: 1.4rem;
     cursor: pointer;
+    text-decoration: none;
 }
 .navbar__links{
     display: flex;
@@ -30,7 +31,7 @@
     display: flex;
     align-items: center;
 }
-.navbar__logo h2:hover,.navbar__links > li > a:hover {
+.navbar__logo>h2>.mernshopcart:hover,.navbar__links > li > a:hover {
     text-decoration: underline;
 }
 
@@ -87,7 +88,7 @@
     }
 }
 @media(max-width:500px){
-    .navbar__logo > h2{
+    .navbar__logo > h2 > .mernshopcart{
         font-size: 1.1rem;
     }
 }

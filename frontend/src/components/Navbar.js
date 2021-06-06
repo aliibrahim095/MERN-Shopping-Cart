@@ -5,7 +5,11 @@ export const Navbar = ({click}) => {
     <div className="navbar">
       {/* logo */}
       <div className="navbar__logo">
-        <h2>Mern Shopping Cart</h2>
+        <h2>
+        <Link className="mernshopcart" to="/">
+          Mern Shopping Cart
+        </Link>
+          </h2>
       </div>
       {/* links */}
       <ul className="navbar__links">
