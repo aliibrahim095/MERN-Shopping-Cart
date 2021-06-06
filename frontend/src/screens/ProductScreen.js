@@ -21,6 +21,10 @@ export const ProductScreen = ({ match, history }) => {
     }
   }, [dispatch, product, match]);
 
+  const addToCartHandler = () =>{
+    dispatch(addToCart(product._id,qty))
+    history.push("/cart")
+  }
   return (
     <div className="productscreen">
       {loading ? (
@@ -31,17 +35,12 @@ export const ProductScreen = ({ match, history }) => {
         <>
           <div className="productscreen_left">
             <div className="left__image">
-              <img
-                src={product.imageUrl}
-                alt={product.name}
-              />
+              <img src={product.imageUrl} alt={product.name} />
             </div>
             <div className="left__info">
               <p className="left__name">{product.name}</p>
               <p>Price: ${product.price}</p>
-              <p>
-                {product.description}
-              </p>
+              <p>{product.description}</p>
             </div>
           </div>
 
@@ -51,18 +50,23 @@ export const ProductScreen = ({ match, history }) => {
                 Price: <span>${product.price}</span>
               </p>
               <p>
-                Status: <span>{product.countInStock>0?"In Stock":"Out Of Stock"}</span>
+                Status:{" "}
+                <span>
+                  {product.countInStock > 0 ? "In Stock" : "Out Of Stock"}
+                </span>
               </p>
               <p>
                 Qty
-                <select value={qty} onChange={(e)=> setQty(e.target.value)}>
-                  {[...Array(product.countInStock).keys()].map(x=>
-                  <option value={x+1}>{x+1}</option>
-                  )}
+                <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                  {[...Array(product.countInStock).keys()].map((x) => (
+                    <option key={x + 1} value={x + 1}>
+                      {x + 1}
+                    </option>
+                  ))}
                 </select>
               </p>
               <p>
-                <button type="button">Add To Cart</button>
+                <button type="button" onClick={addToCartHandler}>Add To Cart</button>
               </p>
             </div>
           </div>
